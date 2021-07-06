@@ -4,18 +4,28 @@ import "./styles.css";
 import PostContent from "./components/PostContent/PostContent";
 
 const App = () => {
-  const [posts, setPosts] = useState("");
+  const [posts, setPosts] = useState([]);
+  const [allPosts, setAllPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentNumber, setCurrentNumber] = useState(10);
+
+  const getPosts = () => {
+    const items = [ ...allPosts ]
+    return items.splice(0, currentNumber)
+  }
+
+  const fetchMore = () => {
+    const num = currentNumber + 10
+    console.log('fetching more ....', num)
+    setCurrentNumber(num)
+  }
 
   useEffect(() => {
     const fetchPosts = async () => {
       const result = await axios(
-        `https://jsonplaceholder.typicode.com/posts/1`
+        `https://jsonplaceholder.typicode.com/posts`
       );
-
-      console.log(result.data);
-
-      setPosts(result.data);
+      setAllPosts(result.data);
       setIsLoading(false);
     };
 
@@ -24,8 +34,14 @@ const App = () => {
 
   return (
     <div className="yo">
-      <h1>POST</h1>
-      <PostContent isLoading={isLoading} posts={posts} />
+      <h1>Lorem Blog Posts</h1>
+      {!isLoading && <PostContent posts={getPosts()} />}
+
+      <button
+      className="button" 
+      onClick={fetchMore}>
+        See More...
+      </button>
     </div>
   );
 };

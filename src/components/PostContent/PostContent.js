@@ -1,20 +1,37 @@
 import React from "react";
-import { PostContainer, PostHeader, PostBody } from "./PostContentElements";
+import { PostContainer, PostWrapper, PostHeader, HeaderBreakerA, HeaderBreakerB, PostBody } from "./PostContentElements";
 
-const PostContent = () => {
-  console.log();
-
+const PostContent = ({ posts }) => {
   return (
     <PostContainer>
-      <PostHeader>
-        <h1>title</h1>
-        <p>written by</p>
-        <p>userId</p>
-      </PostHeader>
+      {posts.map(({ id, title, body, userId }) =>
+        <PostWrapper key={id}>
+          <PostHeader>
+            <HeaderBreakerA>
+              <h1>{title}</h1>
+            </HeaderBreakerA>
+            <HeaderBreakerB>
+              <p>written by</p>
+              <p>{userId}</p>
+            </HeaderBreakerB>
+          </PostHeader>
 
-      <PostBody>
-        <p>body</p>
-      </PostBody>
+          <PostBody>
+            <p>{body}</p>
+          </PostBody>
+        </PostWrapper>
+
+        // <PostWrapper>
+        //   <PostHeader>
+        //       <p>{name}</p>
+        //       <p>{email}</p>
+        //   </PostHeader>
+
+        //   <PostBody>
+        //     <p>{body}</p>
+        //   </PostBody>
+        // </PostWrapper>
+      )}
     </PostContainer>
   );
 };
