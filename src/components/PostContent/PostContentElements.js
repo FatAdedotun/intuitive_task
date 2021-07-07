@@ -58,3 +58,7 @@ export const PostBody = styled.div`
     text-align: justify;
   }
 `;
+
+export const Comments = styled.div`
+  
+`;

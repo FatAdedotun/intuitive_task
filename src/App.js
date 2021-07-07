@@ -32,9 +32,6 @@ const App = () => {
     fetchPosts();
   }, []);
 
-  // set STATE for getComments?
-  // do another useEffect axios for fetchComments?
-
   return (
     <div className="yo">
       <h1>Lorem Blog Posts</h1>
