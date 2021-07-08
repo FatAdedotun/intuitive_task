@@ -9,7 +9,6 @@ const PostContent = ({ posts }) => {
   const [selectedId, setSelectedId] = useState(null);
   
   const getComments = (id) => {
-    console.log('is is true')
     if (selectedId != null) {
       return setSelectedId(null);
     }
