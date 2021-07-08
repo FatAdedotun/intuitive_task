@@ -25,7 +25,7 @@ export const HeaderBreakerA = styled.div`
   
   h1 {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 900;
     width: 100%;
   }
 `;
@@ -44,6 +44,7 @@ export const HeaderBreakerB = styled.div`
     background: aliceblue;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
+    font-weight: 500;
   }
 `;
 
@@ -56,9 +57,31 @@ export const PostBody = styled.div`
   p {
     width: 85%;
     text-align: justify;
+    padding-bottom: 20px;
   }
 `;
 
-export const Comments = styled.div`
-  
+export const CommentsWrapper = styled.div`
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin: 1rem 0rem;
+  margin-left: 2.5rem;
+  padding: 1rem 1rem;
+`;
+
+export const CommentsHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  p {
+    font-weight: 600;
+    margin-right: 5px;
+  }
+`;
+
+export const CommentsBottom = styled.div`
+  p {
+    /* text-align: justify; */
+  }
 `;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./styles.css";
 import PostContent from "./components/PostContent/PostContent";
+import Spinner from "./components/Spinner/spinner";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -35,7 +36,12 @@ const App = () => {
   return (
     <div className="yo">
       <h1>Lorem Blog Posts</h1>
-      {!isLoading && <PostContent posts={getPosts()} />}
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <PostContent posts={getPosts()} />
+      )
+      }
 
       <button
       className="button" 
