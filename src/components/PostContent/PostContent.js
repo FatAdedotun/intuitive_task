@@ -24,8 +24,8 @@ const PostContent = ({ posts }) => {
   const Comments = () => {
     return (
       <div>
-       {comments.map(({ name, email, body }) => 
-       <CommentsWrapper>
+       {comments.map(({ id, name, email, body }) => 
+       <CommentsWrapper key={id}>
          <CommentsHeader>
           <p>{name}</p>
           <p>.</p>

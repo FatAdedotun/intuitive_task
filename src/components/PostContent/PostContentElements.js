@@ -41,7 +41,7 @@ export const HeaderBreakerB = styled.div`
   p {
     font-size: 12px;
     padding: 10px;
-    background: aliceblue;
+    background: #F2F7F8;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     font-weight: 500;
